@@ -24,7 +24,7 @@ export default function RifaInfo () {
 
       <div className="card text-center mb-4">
         <p className="mb-1 mt-2"><strong>Sorteio:</strong> Live no Instagram</p>
-        <p className='border-top'><strong>Data:</strong> 01/09/2025</p>
+        <p className='border-top'><strong>Data:</strong> 04/12/2025</p>
       </div>
 
       <div className="card mb-3">
