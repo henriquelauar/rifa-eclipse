@@ -54,7 +54,7 @@ export default function RifaInfo () {
             <p className='fw-bold'>Organizador</p>
             <p>República Eclipse</p>
             <button className='btn btn-success'>
-              <a href="https://wa.me/5516992558476" target="_blank" className='text-white' style={{ textDecoration: 'none' }}>
+              <a href="https://wa.me/5531982114291" target="_blank" className='text-white' style={{ textDecoration: 'none' }}>
                 Whatsapp <i className='bi bi-whatsapp mx-2'></i>
               </a>
             </button>
