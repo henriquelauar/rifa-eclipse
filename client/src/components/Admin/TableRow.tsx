@@ -91,14 +91,19 @@ export default function TableRow({
       </td>
       <td>
         {isEditing ? (
-          <button className="btn btn-success btn-sm w-100" onClick={onSalvar}>
-            <i className="bi bi-check-lg" /> Salvar
-          </button>
+          <div className="d-flex flex-column flex-md-row">
+            <button className="btn btn-success me-1 mb-1 w-100 w-md-auto" onClick={onSalvar}>
+              <i className="bi bi-check-sm" /> Salvar
+            </button>
+            <button className="btn btn-secondary mb-1 w-100 w-md-auto" onClick={() => setEditRifa(null)}>
+              <i className="bi bi-x-sm" /> Cancelar
+            </button>
+          </div>
         ) : (
           <div className="d-flex flex-column flex-md-row">
             <button
               className={`btn ${rifa.pago ? 'btn-warning' : 'btn-success'} me-1 mb-1 w-100 w-md-auto`}
-              onClick={() => rifa.pago ? onPendente(rifa.id) : onPagar(rifa.id)}
+              onClick={() => (rifa.pago ? onPendente(rifa.id) : onPagar(rifa.id))}
             >
               <i className={`bi ${rifa.pago ? 'bi-x-circle' : 'bi-check-circle'}`} />
             </button>
