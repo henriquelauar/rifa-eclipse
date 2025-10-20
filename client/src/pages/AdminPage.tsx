@@ -1,7 +1,6 @@
 import { useAdmin } from '../hooks/useAdmin';
 import AdminLoginForm from '../components/Admin/AdminLoginForm';
 import AdminTable from '../components/Admin/AdminTable';
-import { getResponsavel } from '../utils/getResponsavel';
 import { useState } from 'react';
 
 export default function AdminPage() {
@@ -12,12 +11,15 @@ export default function AdminPage() {
   } = useAdmin();
 
   const resumoResponsaveis = rifas.reduce((acc, rifa) => {
-    const responsavel = getResponsavel(rifa.numero);
+    const responsavel = rifa.responsavel || 'Sem responsável';
+
     if (!acc[responsavel]) {
       acc[responsavel] = { total: 0, vendidos: 0 };
     }
+
     acc[responsavel].total++;
     if (rifa.pago) acc[responsavel].vendidos++;
+
     return acc;
   }, {} as Record<string, { total: number; vendidos: number }>);
 

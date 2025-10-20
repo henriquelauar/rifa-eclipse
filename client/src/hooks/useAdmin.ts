@@ -110,7 +110,8 @@ export function useAdmin() {
       .update({
         email: editRifa.email,
         telefone: editRifa.telefone,
-        numero: editRifa.numero
+        numero: editRifa.numero,
+        responsavel: editRifa.responsavel,
       })
       .eq('id', editRifa.id);
     if (error) {

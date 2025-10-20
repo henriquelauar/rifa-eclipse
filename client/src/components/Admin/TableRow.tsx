@@ -13,7 +13,7 @@ type Props = {
 };
 
 export default function TableRow({
-  rifa, responsavel, isEditing, editRifa, setEditRifa,
+  rifa, isEditing, editRifa, setEditRifa,
   onSalvar, onPagar, onPendente, onExcluir
 }: Props) {
 
@@ -63,7 +63,26 @@ export default function TableRow({
           />
         ) : rifa.numero}
       </td>
-      <td className="text-wrap">{responsavel}</td>
+      <td className="text-wrap">
+      {isEditing ? (
+        <select
+          className="form-select"
+          value={editRifa?.responsavel || ''}
+          onChange={(e) => setEditRifa({ ...editRifa!, responsavel: e.target.value })}
+        >
+          <option value="">Selecione...</option>
+          <option value="Melitta">Melitta</option>
+          <option value="Comitê">Comitê</option>
+          <option value="Nokia">Nokia</option>
+          <option value="2V">2V</option>
+          <option value="Senna">Senna</option>
+          <option value="Taquaral">Taquaral</option>
+          <option value="Beta">Beta</option>
+        </select>
+      ) : (
+        rifa.responsavel || 'Sem responsável'
+      )}
+    </td>
 
       <td className="text-wrap">
         <span className={`badge ${rifa.pago ? 'bg-success' : 'bg-warning text-dark'}`}>

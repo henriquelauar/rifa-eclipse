@@ -6,6 +6,7 @@ export type Rifa = {
     numero: number;
     pago: boolean;
     created_at: Date;
+    responsavel: string;
   };
 
   export type FormData = {

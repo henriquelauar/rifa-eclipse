@@ -1,6 +1,5 @@
 import TableRow from '../Admin/TableRow';
 import type { Rifa } from '../../types/Rifa';
-import { getResponsavel } from '../../utils/getResponsavel';
 
 type Props = {
   rifas: Rifa[];
@@ -53,7 +52,7 @@ export default function AdminTable({
               <TableRow
                 key={rifa.id}
                 rifa={rifa}
-                responsavel={getResponsavel(rifa.numero)}
+                responsavel={rifa.responsavel || 'Sem responsável'}
                 isEditing={editRifa?.id === rifa.id}
                 editRifa={editRifa}
                 setEditRifa={setEditRifa}
